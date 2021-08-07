@@ -2,19 +2,19 @@
 - name: Docker Install
   hosts: all
 
-tasks:
+  tasks:
 
-- name: install dependencies
-  shell: sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+  - name: install dependencies
+    shell: sudo yum install -y yum-utils device-mapper-persistent-data lvm2
        
-- name: set docker repo source
-  shell: sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+  - name: set docker repo source
+    shell: sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
-- name: manually create cache
-  shell: sudo yum makecache fast
+  - name: manually create cache
+    shell: sudo yum makecache fast
 
-- name: install docker
-  shell: sudo yum -y install docker-ce
+  - name: install docker
+    shell: sudo yum -y install docker-ce
 
-- name: start docker
-  shell: systemctl enable docker && systemctl start docker
+  - name: start docker
+    shell: systemctl enable docker && systemctl start docker
