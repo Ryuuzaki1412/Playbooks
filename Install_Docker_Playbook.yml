@@ -1,6 +1,6 @@
 ---
 - name: Docker Install
-  hosts: all
+  hosts: LinuxServers
 
   tasks:
 
